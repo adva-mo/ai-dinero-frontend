@@ -1,0 +1,12 @@
+{{page-title "Expenses"}}
+<h2>Expenses</h2>
+
+<ul>
+  {{#each @model as |expense|}}
+    <li>{{expense.merchant_name}}</li>
+    <li>{{expense.original_amount}}</li>
+    <li>{{expense.payment_date_time}}</li>
+    <li>{{expense.category_id}}</li>
+  {{/each}}
+</ul>
+{{outlet}}
