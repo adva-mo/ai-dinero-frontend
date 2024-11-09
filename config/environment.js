@@ -13,6 +13,7 @@ module.exports = function (environment) {
         // e.g. EMBER_NATIVE_DECORATOR_SUPPORT: true
       },
     },
+    API_URL: process.env.API_URL,
 
     APP: {
       // Here you can pass flags/options to your application instance
