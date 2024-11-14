@@ -1,3 +1,9 @@
 {{page-title "AiDineroFrontend"}}
-<p>first layer</p>
+
+<nav class="main-nav">
+  <LinkTo @route="index" class="nav-link">Home</LinkTo>
+  <LinkTo @route="expenses" class="nav-link">Expenses</LinkTo>
+  <LinkTo @route="categories" class="nav-link">Categories</LinkTo>
+</nav>
+
 {{outlet}}
