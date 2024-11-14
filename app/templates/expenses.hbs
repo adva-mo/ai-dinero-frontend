@@ -1,12 +1,36 @@
 {{page-title "Expenses"}}
-<h2>Expenses</h2>
 
-<ul>
-  {{#each @model as |expense|}}
-    <li>{{expense.merchant_name}}</li>
-    <li>{{expense.original_amount}}</li>
-    <li>{{expense.payment_date_time}}</li>
-    <li>{{expense.category_id}}</li>
-  {{/each}}
-</ul>
+<div class="expenses-container">
+  <h2>Expenses List</h2>
+
+  {{#if @model}}
+    <div class="expenses-list">
+      {{#each @model as |expense|}}
+        <div class="expense-card">
+          <div class="expense-detail">
+            <span class="label">Merchant:</span>
+            <span class="value">{{expense.merchant_name}}</span>
+          </div>
+
+          <div class="expense-detail">
+            <span class="label">Amount:</span>
+            <span class="value">${{expense.original_amount}}</span>
+          </div>
+
+          <div class="expense-detail">
+            <span class="label">Date:</span>
+            <span class="value">{{expense.payment_date_time}}</span>
+          </div>
+
+          <div class="expense-detail">
+            <span class="label">Category:</span>
+            <span class="value">{{expense.category_id}}</span>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  {{else}}
+    <p class="no-expenses">No expenses found.</p>
+  {{/if}}
+</div>
 {{outlet}}

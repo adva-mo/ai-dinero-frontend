@@ -1,0 +1,51 @@
+{{page-title "Categories"}}
+
+<div class="categories-container">
+  <h2>Categories</h2>
+
+  <form {{on "submit" this.createCategory}} class="category-form">
+    <div class="form-group">
+      <label for="categoryName">Category Name:</label>
+      <Input
+        @type="text"
+        @value={{this.categoryName}}
+        id="categoryName"
+        class="form-input"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="externalId">External ID:</label>
+      <Input
+        @type="text"
+        @value={{this.externalId}}
+        id="externalId"
+        class="form-input"
+        required
+      />
+    </div>
+
+    <button type="submit" class="btn-submit">
+      Add Category
+    </button>
+  </form>
+
+  <div class="categories-list">
+    <h3>Existing Categories</h3>
+    {{#if @model}}
+      <ul>
+        {{#each @model as |category|}}
+          <li>
+            <span class="category-name">{{category.name}}</span>
+            <span class="category-id">(ID: {{category.external_id}})</span>
+          </li>
+        {{/each}}
+      </ul>
+    {{else}}
+      <p>No categories found.</p>
+    {{/if}}
+  </div>
+</div>
+
+{{outlet}}
