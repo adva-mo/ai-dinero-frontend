@@ -32,14 +32,9 @@ export default class CategoriesController extends Controller {
       this.categoryName = '';
       this.externalId = '';
 
-      this.send('reloadModel');
+      this.send('refreshModel');
     } catch (error) {
       console.error('Error creating category:', error);
     }
-  }
-
-  @action
-  async reloadModel() {
-    await this.model.reload();
   }
 }

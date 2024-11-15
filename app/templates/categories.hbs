@@ -37,8 +37,10 @@
       <ul>
         {{#each @model as |category|}}
           <li>
-            <span class="category-name">{{category.name}}</span>
-            <span class="category-id">(ID: {{category.external_id}})</span>
+            <span class="category-id">(ID: {{category.id}}) </span>
+            <span class="category-name">{{category.name}} </span>
+            <span class="category-external-id">(external id:
+              {{category.external_id}})</span>
           </li>
         {{/each}}
       </ul>
